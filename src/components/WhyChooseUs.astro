@@ -1,0 +1,49 @@
+---
+const reasons = [
+  {
+    title: 'Mumbai-Based',
+    description: 'Physical presence in Kurla (West). Onsite visits, same-day demos, and fast local delivery across Mumbai.',
+    svgPath: 'M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z',
+  },
+  {
+    title: 'GST-Registered',
+    description: 'Proper GST invoicing for B2B procurement. Claim input tax credit on all hardware and service purchases.',
+    svgPath: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z',
+  },
+  {
+    title: 'Same-Day Response',
+    description: 'WhatsApp inquiries answered within the hour during business hours. No forms, no waiting.',
+    svgPath: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: 'Warranty & AMC',
+    description: '3-year onsite warranty, Accidental Damage Protection, and Annual Maintenance Contracts available.',
+    svgPath: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+];
+---
+
+<section class="py-16 px-4 bg-[#1a2744]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-sm font-medium text-[#43b8de] uppercase tracking-widest mb-2">Why GidsTek</p>
+      <h2 class="text-3xl font-bold text-white">Built for Mumbai Businesses</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {reasons.map(reason => (
+        <div class="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col gap-4 hover:bg-white/10 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#43b8de]/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#43b8de" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" d={reason.svgPath} />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-2">{reason.title}</h3>
+            <p class="text-sm text-white/60 leading-relaxed">{reason.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

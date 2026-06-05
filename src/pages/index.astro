@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import BrandBadges from '../components/BrandBadges.astro';
+import HardwareCatalog from '../components/HardwareCatalog.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { hardwareItems } from '../data/hardware';
+---
+
+<BaseLayout
+  title="GidsTek — IT Hardware & Solutions Mumbai"
+  description="Mumbai's trusted IT hardware partner. Lenovo, HP, Dell laptops and servers. Cisco networking. APC UPS. Hikvision CCTV. GST invoicing, onsite support, WhatsApp response."
+>
+  <HeroSection />
+  <BrandBadges />
+  <HardwareCatalog items={hardwareItems} limit={6} title="Featured Hardware" />
+  <WhatsAppCTA
+    variant="inline"
+    message="Hi GidsTek, I saw your hardware catalog and have a question. Can you help?"
+    label="Ask Us on WhatsApp"
+  />
+  <ServicesGrid />
+  <WhyChooseUs />
+  <ContactSection />
+</BaseLayout>

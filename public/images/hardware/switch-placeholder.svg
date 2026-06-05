@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <rect width="400" height="280" fill="#1a2744"/>
+  <rect x="50" y="100" width="300" height="80" rx="8" fill="#0f1a30" stroke="#43b8de" stroke-width="1.5"/>
+  <g fill="#43b8de" opacity="0.7">
+    <rect x="68" y="120" width="12" height="16" rx="2"/>
+    <rect x="86" y="120" width="12" height="16" rx="2"/>
+    <rect x="104" y="120" width="12" height="16" rx="2"/>
+    <rect x="122" y="120" width="12" height="16" rx="2"/>
+    <rect x="140" y="120" width="12" height="16" rx="2"/>
+    <rect x="158" y="120" width="12" height="16" rx="2"/>
+    <rect x="176" y="120" width="12" height="16" rx="2"/>
+    <rect x="194" y="120" width="12" height="16" rx="2"/>
+  </g>
+  <circle cx="320" cy="128" r="5" fill="#43b8de"/>
+  <circle cx="320" cy="148" r="5" fill="#43b8de" opacity="0.4"/>
+  <text x="200" y="220" font-family="Inter,sans-serif" font-size="12" fill="#43b8de" text-anchor="middle" opacity="0.6">Network Switch</text>
+</svg>

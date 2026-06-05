@@ -1,0 +1,61 @@
+---
+import HardwareCard from './HardwareCard.astro';
+import type { HardwareItem } from '../data/hardware';
+import { categoryLabels } from '../data/hardware';
+
+interface Props {
+  items: HardwareItem[];
+  limit?: number;
+  showFilters?: boolean;
+  title?: string;
+}
+
+const { items, limit, showFilters = false, title = 'Hardware Catalog' } = Astro.props;
+const displayItems = limit ? items.slice(0, limit) : items;
+const categories = [...new Set(items.map(i => i.category))];
+---
+
+<section class="py-16 px-4 bg-[#f0f8fc]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="text-sm font-medium text-[#43b8de] uppercase tracking-widest mb-2">What We Supply</p>
+        <h2 class="text-3xl font-bold text-[#1a2744]">{title}</h2>
+      </div>
+      {!limit && (
+        <p class="text-gray-500 text-sm">{items.length} products across {categories.length} categories</p>
+      )}
+    </div>
+
+    {showFilters && (
+      <div class="flex flex-wrap gap-2 mb-8">
+        {categories.map(cat => (
+          <a
+            href={`#cat-${cat}`}
+            class="px-4 py-1.5 rounded-full text-sm font-medium border border-[#43b8de]/40 text-[#1a2744] hover:bg-[#43b8de] hover:text-white hover:border-[#43b8de] transition-colors"
+          >
+            {categoryLabels[cat]}
+          </a>
+        ))}
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {displayItems.map(item => (
+        <HardwareCard item={item} />
+      ))}
+    </div>
+
+    {limit && items.length > limit && (
+      <div class="text-center mt-10">
+        <a
+          href="/hardware/"
+          class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-white bg-[#1a2744] hover:bg-[#43b8de] transition-colors"
+        >
+          View All {items.length} Products
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+const brands = [
+  { name: 'Lenovo', color: '#E2231A' },
+  { name: 'HP', color: '#0096D6' },
+  { name: 'Dell', color: '#007DB8' },
+  { name: 'Cisco', color: '#1BA0D7' },
+  { name: 'APC', color: '#88B917' },
+  { name: 'Hikvision', color: '#CC0000' },
+];
+---
+
+<section class="bg-white border-y border-gray-100 py-8 px-4">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-center text-sm font-medium text-gray-400 uppercase tracking-widest mb-6">We Supply Products From</p>
+    <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+      {brands.map(brand => (
+        <div class="flex items-center justify-center px-6 py-3 bg-gray-50 rounded-lg border border-gray-100 hover:border-[#43b8de]/40 hover:bg-[#f0f8fc] transition-colors min-w-[100px]">
+          <span class="text-lg font-bold" style={`color: ${brand.color};`}>{brand.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="Page Not Found — GidsTek" description="Page not found.">
+  <div class="min-h-[70vh] flex items-center justify-center px-4">
+    <div class="text-center flex flex-col items-center gap-6 max-w-md">
+      <span class="text-8xl font-bold text-[#43b8de]/20">404</span>
+      <h1 class="text-2xl font-bold text-[#1a2744]">Page Not Found</h1>
+      <p class="text-gray-500">This page doesn't exist. Try the links below, or chat with us on WhatsApp.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/" class="px-6 py-2.5 rounded-full font-semibold text-white bg-[#1a2744] hover:bg-[#43b8de] transition-colors">
+          Go Home
+        </a>
+        <a href="/hardware/" class="px-6 py-2.5 rounded-full font-semibold text-[#1a2744] border border-gray-200 hover:border-[#43b8de] hover:text-[#43b8de] transition-colors">
+          Browse Hardware
+        </a>
+        <a
+          href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hi GidsTek, I got a 404 on your site and need help.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-2.5 rounded-full font-semibold text-white transition-opacity hover:opacity-90"
+          style="background-color: #25D366;"
+        >
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+---
+
+<BaseLayout
+  title="Services — GidsTek"
+  description="IT infrastructure, web development, mobile apps, digital marketing, consulting, and support — all from GidsTek in Mumbai."
+  canonicalUrl="https://gidstek.com/services/"
+>
+  <div class="bg-[#1a2744] py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-sm font-medium text-[#43b8de] uppercase tracking-widest mb-2">What We Offer</p>
+      <h1 class="text-4xl font-bold text-white">Our Services</h1>
+      <p class="text-white/60 mt-3 max-w-xl">
+        End-to-end IT solutions for Mumbai businesses. Hardware, software, networking, and digital presence — all in one place.
+      </p>
+    </div>
+  </div>
+
+  <ServicesGrid />
+
+  <WhatsAppCTA
+    variant="inline"
+    message="Hi GidsTek, I'd like to discuss a service requirement. Please get in touch."
+    label="Discuss Your Requirements"
+  />
+</BaseLayout>
